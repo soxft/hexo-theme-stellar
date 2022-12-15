@@ -332,7 +332,9 @@ if (stellar.search.service) {
             }
           }
         });
-        observer.observe($resultArea, { childList: true });
+        try {
+          observer.observe($resultArea, { childList: true });
+        }catch(e) {}
       });
     })
   }
