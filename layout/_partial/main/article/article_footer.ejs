@@ -41,12 +41,14 @@ function layoutDiv() {
 
   if (page.layout == 'post') {
     if (theme.article.license && page.license != false) {
+      let license = page.license || theme.article.license;
+
       el += '<section id="license">';
       el += '<div class="header">';
       el += '<span>' + __('meta.license') + '</span>';
       el += '</div>';
       el += '<div class="body">';
-      el += markdown(page.license || theme.article.license);
+      el += markdown(license.replace(/{{PERMALINK}}/g, page.permalink));
       el += '</div>';
       el += '</section>';
     }
