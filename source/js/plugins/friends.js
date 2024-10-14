@@ -50,7 +50,7 @@ const friendsjs = {
       const arr = data.content || data;
       arr.forEach((item, i) => {
         var user = '<div class="user-card">';
-        user += '<a class="card-link" target="_blank" rel="external nofollow noopener noreferrer"';
+        user += '<a class="card-link" target="_blank" rel="external noopener noreferrer"';
         user += ' href="' + (item.html_url || item.url) + '">';
         user += '<img src="' + (item.avatar_url || item.avatar || cfg.avatar) + '" onerror="javascript:this.src=\'' + cfg.avatar + '\';">';
         user += '<div class="name"><span>' + (item.title || item.login) + '</span></div>';
