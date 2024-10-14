@@ -24,7 +24,7 @@ module.exports = ctx => function(args) {
   el += '<div class="tag-plugin link dis-select">'
   el += '<a class="link-card' + (args.desc ? ' rich' : ' plain') + '" title="' + (args.title || '') + '" href="' + args.url + '"'
   if (args.url.includes('://')) {
-    el += ' target="_blank" rel="external nofollow noopener noreferrer"'
+    el += ' target="_blank" rel="external noopener"'
   }
   el += ' cardlink'
   el += ' autofill="'

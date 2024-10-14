@@ -31,7 +31,7 @@ module.exports = ctx => function(args) {
     function cell(item) {
       if (item.url && item.title) {
         var cell = '<div class="site-card">'
-        cell += '<a class="card-link" target="_blank" rel="external noopener noreferrer" href="' + item.url + '">'
+        cell += '<a class="card-link" target="_blank" rel="external noopener" href="' + item.url + '">'
         cell += '<img src="' + (item.screenshot || ('https://screenshot-api.xaoxuu.com/api?url=' + item.url + '&width=1280&height=720')) + '" onerror="javascript:this.removeAttribute(&quot;data-src&quot;);this.src=&quot;' + ctx.theme.config.default.cover + '&quot;;"/>'
         cell += '<div class="info">'
         cell += '<img src="' + (item.avatar || ctx.theme.config.default.link) + '" onerror="javascript:this.removeAttribute(&quot;data-src&quot;);this.src=&quot;' + ctx.theme.config.default.link + '&quot;;"/>'

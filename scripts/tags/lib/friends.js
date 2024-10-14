@@ -3,6 +3,8 @@
  * 格式与官方标签插件一致使用空格分隔，中括号内的是可选参数（中括号不需要写出来）
  *
  * {% friends [group] [repo:owner/repo] [api:http] %}
+ * 
+ * //TODO 这个文件控制了 /link页面 的 nofollow 等 rel
  */
 
 'use strict'
@@ -31,7 +33,7 @@ module.exports = ctx => function(args) {
     function cell(item) {
       if (item.url && item.title) {
         var cell = '<div class="user-card">'
-        cell += '<a class="card-link" target="_blank" rel="external noopener noreferrer" href="' + item.url + '">'
+        cell += '<a class="card-link" target="_blank" rel="external noopener" href="' + item.url + '">'
         cell += '<img src="' + (item.avatar || ctx.theme.config.default.avatar) + '" onerror="javascript:this.removeAttribute(&quotdata-src&quot)this.src=&quot' + ctx.theme.config.default.avatar + '&quot"/>'
         cell += '<div class="name"><span>' + item.title + '</span></div>'
         cell += '</a></div>'
